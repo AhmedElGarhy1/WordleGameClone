@@ -1,25 +1,21 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NavBar from "./NavBar";
-import Home from "./Home";
-import Create from "./Create";
-import BlogDetails from "./BlogDetails";
-import NotFound from "./NotFound";
+import { allSolutions } from "./data";
+import { useEffect, useState } from "react";
+import Wordle from "./components/wordle";
 
 function App() {
+  const [solution, setSolution] = useState(null);
+
+  useEffect(() => {
+    const randomNum = Math.floor(Math.random() * allSolutions.length);
+    setSolution(allSolutions[randomNum].word);
+  }, []);
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/blogs/:id" element={<BlogDetails />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <h1>Wordle (Lingo)</h1>
+      {solution && console.log(solution)}
+      <Wordle solution={solution} />
+    </div>
   );
 }
 
