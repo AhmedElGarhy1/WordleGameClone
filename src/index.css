@@ -44,8 +44,8 @@ h1 {
   animation: flip 0.2s ease forwards;
 }
 .row > .yellow {
-  --background-color: #e2cc68;
-  --border-color: #e2cc68;
+  --background-color: #33eb0e;
+  --border-color: #33eb0e;
   animation: flip 0.2s ease forwards;
 }
 
@@ -73,7 +73,7 @@ h1 {
 
 .keyboard {
   max-width: 500px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .keyboard .key-row div {
@@ -99,7 +99,7 @@ h1 {
   transition: all 0.3s ease-in;
 }
 .keyboard .key-row .yellow {
-  background-color: #e2cc68;
+  background-color: #33eb0e;
   color: #fff;
   transition: all 0.3s ease-in;
 }
@@ -150,6 +150,83 @@ h1 {
     font-size: 15px !important;
   }
 }
+
+.again {
+  background: #5ac85a;
+  margin: 10px auto 0;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  width: 85px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.again:hover {
+  transform: scale(1.08);
+}
+
+.tip {
+  position: relative;
+}
+.tip-colors {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 70px;
+  width: 323px;
+  transform: translateX(-50%);
+  left: 50%;
+  padding: 10px 0;
+  border: 10px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.192);
+  transition: 0.3s;
+}
+.tip-colors .green {
+  background-color: #6e8022;
+}
+.tip-colors .yellow {
+  background-color: #33eb0e;
+}
+.tip-colors .grey {
+  background-color: #a1a1a1;
+}
+
+.tip-colors span {
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.tip-name {
+  color: white;
+  padding: 10px 20px;
+  font-size: 30px;
+  background: #33eb0e;
+  width: fit-content;
+  margin: 10px auto;
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.tip-name:hover {
+  transform: scale(1.08);
+}
+
+h2 {
+  color: #6e8022;
+}
+
+.open {
+  display: block !important;
+}
+
 /* animations */
 
 @keyframes flip {
